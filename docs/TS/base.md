@@ -565,7 +565,7 @@ export {
 
 > 只有 `function`、`class` 和 `interface` 可以直接默认导出，其他的变量需要先定义出来，再默认导出
 >
-> 针对默认导出，一般会把导出语句烦恼歌在声明文件的最前面。
+> 针对默认导出，一般会把导出语句放在声明文件的最前面。
 
 ```js
 export default function foo(): string;

@@ -1,7 +1,11 @@
 const path = require('path');
 module.exports = {
-  title: 'zzc个人文档',
+  title: '前端笔记',
   description: '前端开发笔记,vue,react,TypeScript',
+  head: [
+    ['link', { rel: 'icon', href: '/c.ico' }]
+  ],
+  serviceWorker: true,
   markdown: {
     // lineNumbers: true, // 每块代码都带行号
   },
@@ -13,6 +17,7 @@ module.exports = {
     }
   },
   themeConfig: {
+    lastUpdated: '最后更新于', // 给每篇加上最后更新时间，基于 git
     // 添加导航栏
     nav: [ // 导航栏
       {
@@ -21,10 +26,10 @@ module.exports = {
         items: [
           { text: 'vue', link: '/vue/base' },
           { text: 'react', link: '/react/base' },
-          { text: 'js基础', link: '/js/' },
-          { text: '服务器相关', link: '/server/' },
-          { text: '前端构建', link: '/building/' },
-          { text: 'TypeScript', link: '/TS/' },
+          { text: 'js基础', link: '/js/closure' },
+          { text: '服务器相关', link: '/server/base' },
+          { text: '前端构建', link: '/building/git2github' },
+          { text: 'TypeScript', link: '/TS/base' },
         ]
       },
       {
