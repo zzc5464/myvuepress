@@ -204,3 +204,30 @@ Function.prototype.myApply = function(context=window) {
 
 ```
 
+## 实现 new
+
+> 生成一个新对象
+
+> 绑定原构造函数的原型对象
+
+> 传参数并返回这个新对象
+
+```js
+
+function New(fn,...res) {
+  const o = {}; // 生成新对象
+  o.__proto__ = fn.prototype // 绑定构造函数的原型对象
+  const obj = fn.apply(o,res) // 传参调用
+  if ((typeof obj === "object" || typeof obj === "function") && obj !== null) {
+      return obj;
+  }
+  return o
+}
+function B(name,age){
+  this.name = name
+  this.age = age
+};
+console.log(New(B,'zzc','16').name);
+console.log(new B('zzc','16').name);
+
+```

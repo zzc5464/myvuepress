@@ -19,10 +19,12 @@ module.exports = {
         text: '笔记',
         // 这里是下拉列表展现形式。
         items: [
-          { text: 'vue', link: '/vue/' },
-          { text: 'react', link: '/react/' },
+          { text: 'vue', link: '/vue/base' },
+          { text: 'react', link: '/react/base' },
           { text: 'js基础', link: '/js/' },
           { text: '服务器相关', link: '/server/' },
+          { text: '前端构建', link: '/building/' },
+          { text: 'TypeScript', link: '/TS/' },
         ]
       },
       {
@@ -85,6 +87,17 @@ module.exports = {
         'storage',
         'http',
         'JWT',
+      ],
+      '/building/': [
+        'git2github',
+        'GithubMD',
+        'shell',
+        'webpack',
+        'webpack-loader',
+      ],
+      '/TS/': [
+        'base',
+        'advance',
       ],
     }, // 侧边栏
   }
