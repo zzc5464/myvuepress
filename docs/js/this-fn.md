@@ -204,13 +204,63 @@ Function.prototype.myApply = function(context=window) {
 
 ```
 
+## bind
+先看 bind 实现了什么效果
+
+```js
+
+this.name = 'czz'
+const obj = {
+  name: 'zzc',
+  fn() {
+    console.log(this.name);
+  }
+}
+obj.fn() // zzc
+const { fn } = obj;
+fn() // czz
+// bind 之后，无论在哪个作用域下调用，this 都是固定的。
+const bindObj = fn.bind(obj)
+bindObj() // zzc
+
+```
+- 实现 bind
+
+```js
+// 自己实现 bind
+Function.prototype.myBind = function (that,...rest) {
+  const self = this; // 保留原 this
+  function func(...argu) {
+    return self.apply(this instanceof Function?this:that,[...rest,...argu])
+  }
+  // func.prototype = self.prototype;
+  return func
+}
+
+this.name = 'cba' 
+const obj = {
+  name: 'abc',
+  fn() {
+    console.log(this.name);
+  }
+}
+
+const {fn} = obj;
+const bindFN = fn.myBind(obj) // 返回一个绑定了 obj 的函数
+bindFN() // abc
+
+```
+
 ## 实现 new
 
 > 生成一个新对象
 
 > 绑定原构造函数的原型对象
 
-> 传参数并返回这个新对象
+> 执行并返回这个新对象
+
+> 如果函数没有返回对象类型Object(包含Functoin, Array, Date, RegExg, Error)，那么new表达式中的函数调用将返回该对象引用。
+
 
 ```js
 
@@ -231,3 +281,4 @@ console.log(New(B,'zzc','16').name);
 console.log(new B('zzc','16').name);
 
 ```
+
