@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
   title: '前端笔记',
-  description: '前端开发笔记,vue,react,TypeScript',
+  // description: '前端开发笔记,vue,react,TypeScript',
   head: [
     ['link', { rel: 'icon', href: '/c.ico' }]
   ],
@@ -18,6 +18,10 @@ module.exports = {
   },
   themeConfig: {
     lastUpdated: '最后更新于', // 给每篇加上最后更新时间，基于 git
+    repo: 'https://github.com/zzc5464/myvuepress',
+    repoLabel: 'Github',
+    // editLinks: true,
+    //  editLinkText: '帮助我们改善此页面！',
     // 添加导航栏
     nav: [ // 导航栏
       {
@@ -40,10 +44,6 @@ module.exports = {
           { text: '哪来的国际化', link: '/vue/' },
         ]
       },
-      {
-        text: 'Github',
-        link: 'https://github.com/zzc5464'
-      }
     ],
     // 为以下路由添加侧边栏
     sidebar: {
