@@ -3,52 +3,14 @@
  + 自己调用自己服务器接口文件的时候，使用ajax。
  + 调用别人给你的功能接口的时候用jsonp
 
-## 服务器概念
-- 和我们电脑一样，都是计算机。
-- 服务器提供的功能：下载、传输网页、邮件。。。
-- 它也有自己的操作系统，比如客户端的windows
-- 跟客户端不同的是应用程序，服务器端的应用程序是  提供 服务的。
-
-## HTTP服务器
-- 即网站服务器，主要提供文档(文本、图片、视频、音频)浏览服务。
-- HTTP服务器可以结合某一编程语言处理业务逻辑，由此进行的开发，通常称之为服务端开发。
-- 常见的服务端编程语言包括 PHP、Jsp、Asp、Python、Ruby、Perl等 。
-
-### 协议
-
-- 英语就是一种协议
-- 你听得懂，我听得懂就叫协议。
-- json和xml就是计算机世界通用的协议
-
-## 网络基础
-
-1. IP地址
-- 所谓IP地址就是给每个连接在互联网上的主机分配的一个32位地址。类似手机号码.
-- 就是通过编号找计算机的
-2. 域名
-- 域名是一个IP地址的“面具”，由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址。
-- 可以好几个域名对应一个ip地址
-3. DNS服务
-- 互联网上有13台计算机专门提供解析功能。
-- DNS记录了 IP 地址和域名的映射（对应）关系。
-4. 端口
-- IP地址是找计算机，端口就是精确的找哪个应用程序。
-
-- 端口号是计算机与外界通讯交流的出口，每个端口号对应不同的服务。
-
-- 端口号由数字组成，其取值范围从0 到 65535 
-
-- 查看端口占用情况 netstat –an
-
-- 常见端口号 80、8080、3306、21、22
-
-## 安装WampServer
+## 跨域的方式
+### 安装WampServer
 - 安装wampserver，和普通软件安装无差别，除指定安装路径外，其它默认。
 - 让电脑同时扮演客户端和服务器
 
-## iframe
+### iframe
 - 在还没有XHR的时候，就用这个标签实现异步加载。
-```
+```html
     //普通格式
     <iframe src="./myFrame.html"></iframe>
 
@@ -124,19 +86,64 @@ data.php内容
 3. xhr.responseText
  + 这里就是我们需要的数据，json格式的
  + xhr.responseXML返回的就是XML格式的数据。
+```js
+    if(xhr.readyState == 4){
+        if(xhr.status == 200){
+            alert(1);
+            var data = xhr.responseText;
+            if(data == 1){
+            
+            }else if(data == 2){
+                
+            }
+        }
+    };
 ```
-                if(xhr.readyState == 4){
-                    if(xhr.status == 200){
-                        alert(1);
-                        var data = xhr.responseText;
-                        if(data == 1){
-                     
-                        }else if(data == 2){
-                          
-                        }
-                    }
-                };
+
+### 发送get请求
+
+XMLHttpRequest以异步的方式发送HTTP请求，因此在发送请求时，一样需要遵循HTTP协议。
+
+```javascript
+//使用XMLHttpRequest发送get请求的步骤
+//1. 创建一个XMLHttpRequest对象
+var xhr = new XMLHttpRequest;//构造函数没有参数的情况,括号可以省略
+//2. 设置请求行
+//第一个参数:请求方式  get/post
+//第二个参数:请求的地址 需要在url后面拼上参数列表
+xhr.open("get", "08.php?name=hucc");
+//3. 设置请求头
+//浏览器会给我们默认添加基本的请求头,get请求时无需设置
+//4. 设置请求体
+//get请求的请求体为空,因为参数列表拼接到url后面了
+xhr.send(null);
 ```
+
++ get请求,设置请求行时,需要把参数列表拼接到url后面
++ get请求不用设置请求头
++ get请求的请求体为null
+
+
+
+### 发送post请求
+
+```javascript
+var xhr = new XMLHttpRequest;
+//1. 设置请求行 post请求的参数列表在请求体中
+xhr.open("post", "09.php");
+//2. 设置请求头, post请求必须设置content-type,不然后端无法获取到数据
+xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+//3. 设置请求体
+xhr.send("name=hucc&age=18");
+```
+
++ post请求,设置请求行时,参数列表不能拼接到url后面
+
++ post必须设置请求头中的content-type为application/x-www-form-urlencoded
+
++ post请求需要将参数列表设置到请求体中.
+
+
 
 ### 详解
 1. readyState 一共有五个状态 0-4
@@ -152,10 +159,6 @@ data.php内容
 3. xhr.status == 200 表示访问完成,还有很多其他状态比如404/503...
 4. var data = xhr.responseText; 这个就是我们要的data
 
-
-## ajax的应用
-- 百度、快递、360天气....很多使用场景
-- 我们要做的就是使用ajax向后端接口请求数据，然后通过回调的数据动态的在我们页面渲染出来。
 
 ## 原生ajax的封装
 - 思路：
@@ -268,7 +271,8 @@ function ajax(data){
 
 ## Ajax全局事件
 
-![](md-imgs/ajax全局事件.png)
+<img :src="$withBase('/assets/js/ajax全局事件.png')" alt="ajax全局事件">
+
 
 - `ajaxStart`和`ajaxEnd` 都只会调用一次，分别是**请求队列**的头和尾
 - 每一个ajax发送前都会触发`ajaxSend`

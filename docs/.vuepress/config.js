@@ -37,6 +37,8 @@ module.exports = {
           { text: '前端构建', link: '/building/git2github' },
           { text: 'TypeScript', link: '/TS/base' },
           { text: 'Node', link: '/node/01base' },
+          { text: 'PHP', link: '/php/base' },
+          { text: '库类', link: '/libs/artTemplate' },
         ]
       },
       {
@@ -128,6 +130,14 @@ module.exports = {
         '06express',
         '07MongoDB',
         '08middleware',
+      ],
+      '/php/': [
+        'base',
+        'phpStudy',
+        'xmlJson',
+      ],
+      '/libs/': [
+        'artTemplate',
       ],
     }, // 侧边栏
   }
