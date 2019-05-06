@@ -12,17 +12,12 @@
 
 - 查看当前npm版本：`npm -v `   
 
-  > 目前 node 最新是 9.0.0版本  稳定版是8.9.0版本 
-  >
-  > npm 对应的是  5.5.1 版本 了
-
 - 更新 npm：`npm i npm@latest -g`       `i 就是 install, 用哪个都行`
 
   ```js
   //更新最新的 npm 
   // npm i npm -g   //  --global
   // npm i npm@latest -g 
-  // npm i npm@9.0.0  -g
   ```
 
   ​
@@ -92,36 +87,36 @@ node.js 错误调试：
 
 - npm毕竟要翻墙，用淘宝镜像是国内的10分钟同步一次。
 
-```js
-//淘宝镜像
+```node
+
+# 淘宝镜像
 npm config set registry https://registry.npm.taobao.org
 
-//检测是否设置成功
+# 检测是否设置成功
 npm config get registry
 ```
 
 ### cnpm
 
-- 尽量不要用，可能会有bug
 
-```
-1. npm 安装 cnpm  
-   npm i cnpm -g
-2. 检查  cnpm   
-    cnpm -v
-3. 安装其他包:
-   cnpm  i bootstrap -S
+```sh
+# npm 安装 cnpm  
+npm i cnpm -g
+# 检查  cnpm   
+cnpm -v
+# 安装其他包:
+cnpm  i bootstrap -S
 ```
 
 ### yarn
 
-```
-1. npm 安装 yarn  
-   npm i yarn -g
-2. 检查  yarn   
-    yarn -v
-3. 安装其他包:
-   yarn add underscore 
+```sh
+# npm 安装 yarn  
+npm i yarn -g
+# 检查  yarn   
+yarn -v
+# 安装其他包:
+yarn add underscore 
 ```
 
 - 和npm是一个东西
