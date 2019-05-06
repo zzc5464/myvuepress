@@ -28,12 +28,15 @@ module.exports = {
         text: '笔记',
         // 这里是下拉列表展现形式。
         items: [
+          { text: 'H5', link: '/h5/h5api' },
+          { text: 'CSS', link: '/css/base' },
           { text: 'vue', link: '/vue/base' },
           { text: 'react', link: '/react/base' },
           { text: 'js基础', link: '/js/closure' },
           { text: '服务器相关', link: '/server/base' },
           { text: '前端构建', link: '/building/git2github' },
           { text: 'TypeScript', link: '/TS/base' },
+          { text: 'Node', link: '/node/01base' },
         ]
       },
       {
@@ -47,6 +50,17 @@ module.exports = {
     ],
     // 为以下路由添加侧边栏
     sidebar: {
+      '/h5/': [
+        'h5api',
+        'drag',
+      ],
+      '/css/': [
+        'base',
+        'backflow',
+        'flex',
+        'layout',
+        'less',
+      ],
       '/vue/': [
         'base',
         'base-2',
@@ -85,6 +99,7 @@ module.exports = {
         'ES6-02', 
         'jsonp', 
         'webSocket', 
+        'writeCode'
       ],
       '/server/': [
         'base',
@@ -103,6 +118,16 @@ module.exports = {
       '/TS/': [
         'base',
         'advance',
+      ],
+      '/node/': [
+        '01base',
+        '02npm',
+        '03nodeAPI',
+        '04nodeModule',
+        '05nodeModulePro',
+        '06express',
+        '07MongoDB',
+        '08middleware',
       ],
     }, // 侧边栏
   }

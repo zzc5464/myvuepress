@@ -4,7 +4,7 @@ actionText: 快速开始 →
 actionLink: /vue/base.html
 features:
 - title: 说人话
-  details: 围绕一个主题，绝对衍伸过多的专业术语
+  details: 围绕一个主题，绝不衍伸过多的专业术语
 - title: 讲明白
   details: 尽量用最明白的话把一个知识点说透
 - title: 可传播
