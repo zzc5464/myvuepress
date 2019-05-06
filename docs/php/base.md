@@ -6,13 +6,12 @@
 >
 > php页面无法直接打开需要运行在服务器环境当中
 
-***注意：学习php的目的是辅助学习ajax，因为我们需要了解一点后台的知识，千万不要本末倒置的跑去学习php语法。*** 
+***注意：学习php的目的是辅助学习ajax，因为我们需要了解一点后台的知识。*** 
 
 
 
 ## php初体验
 
-> webstorm对于php的支持并不友好，没有高亮显示，但是也支持代码提示，功能比较微弱，如果需要专业的提示和高亮，需要下载phpstorm。
 
 [phpstrorm下载地址](http://www.jetbrains.com/phpstorm/)
 
@@ -36,7 +35,7 @@
     header("content-Type:text/html;charset=utf-8");
     echo "hello world";
     echo "<br/>";
-    echo "大家好，我是胡聪聪";
+    echo "大家好，我是zzc";
 ?>
 ```
 
@@ -59,7 +58,7 @@
 //1. 不需要关键字进行声明，变量在第一次赋值的时候被创建。
 //2. 必须以$符号开始
 //3. $后面的命名规则与js的变量命名规则一致。
-$name = "胡聪聪";
+$name = "zzc";
 echo $name;
 ```
 
@@ -106,7 +105,7 @@ echo $flag;
 ```php
 //1. 在php中，+号只有算数的功能，并不能拼串
 //2. 在php中，拼串使用.
-$name = "胡聪聪";
+$name = "zzc";
 echo "大家好，我是" . $name . "，今年18岁";
 ```
 
@@ -114,12 +113,12 @@ echo "大家好，我是" . $name . "，今年18岁";
 
 ```php
 //1. 字符串的定义可以使用单引号，也可以使用双引号
-$name = "胡聪聪";
+$name = "zzc";
 $desc = '很帅';
 //2. 在单引号中，完全当做字符看待
 //3. 在双引号中，能够识别变量。如果有变量格式的字符串，可以直接解析
 
-$name = "胡聪聪";//胡聪聪
+$name = "zzc";//zzc
 echo $name;
 $desc = '很帅';
 echo $desc;//很帅
@@ -127,7 +126,7 @@ echo $desc;//很帅
 $str = '$name 很帅';//$name 很帅
 echo $str;
 
-$str = "$name 很帅";//胡聪聪 很帅
+$str = "$name 很帅";//zzc 很帅
 echo $str;
 ```
 
@@ -199,7 +198,7 @@ echo $zs->sex;//私有属性，无法获取
         echo "<br>";
     }
     sayHello();//不传参数，会使用默认值
-    sayHello("胡聪聪");//传参数，默认值不生效，和less差不多。
+    sayHello("zzc");//传参数，默认值不生效，和less差不多。
 ?>
 ```
 
@@ -313,7 +312,7 @@ echo in_array("zs", $arr);
 <?php
   //这个属性是可以通过数据库进行获取的
   $person = array(
-    "name"=>"胡聪聪",
+    "name"=>"zzc",
     "gender"=>"男1",
     "hobby"=>"女1"
   )
@@ -333,11 +332,6 @@ echo in_array("zs", $arr);
 $arr = array('张三','李四','王五','赵六');
 include '04-render-for.html';
 ```
-
-【案例：京东分类页】
-
-【案例：京东首页】
-
 
 
 ## 总结

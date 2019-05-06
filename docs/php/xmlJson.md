@@ -90,7 +90,7 @@ JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交
 $obj = array(
   "a"=>"hello",
   "b"=>"world",
-  "name"=>"胡聪聪"
+  "name"=>"zzc"
 );
 //json字符串
 $json = json_encode($obj);
