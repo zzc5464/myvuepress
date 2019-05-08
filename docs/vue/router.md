@@ -1,4 +1,4 @@
-# Vue的路由
+# vue-router
 
 ## 路由是什么？
 
@@ -9,8 +9,6 @@
 ## Vue-router
 
 > vue中的路由效果，通过不同的hash值，展示不同的组件
-
-
 
 - 安装(基于webpack单页面文件时引入)
 
@@ -145,9 +143,7 @@ path:'/login:id?'
 >
 > 那么就要用到下面的方法。
 
-## watch 监听数据
-
-#### 监听路由
+## 监听路由
 
 > 路由的配置参数 `watch` 和 `beforeRouteUpdate` 
 
@@ -163,7 +159,7 @@ const User = {
 }
 ```
 
-#### `beforeRouteUpdate` 
+### `beforeRouteUpdate` 
 
 ```js
 // vue@2.2 以上 可用
@@ -175,101 +171,6 @@ const User = {
   }
 }
 ```
-
-## vue实例中的watch
-
-> `vue`实例中的又一个属性`watch` ，可以监听数据的变化
->
-> `msg`用于监听数据
->
-> 用于监听对象，监听也要写成对象
->
-> `handler`就是监听对象的函数
->
-> `deep`表示深层次监听，不是true的话无法监听对象
->
-> `immediate`表示立即开始监听
-
-```js
-var vm = new Vue({
-            el: '#app',
-            data: {
-                msg: '100',
-                person:{
-                  one:1,
-                  two:2
-                }
-            },
-            methods: {},
-            watch: {
-                msg(nv, ov) {
-                    console.log("监听数据");
-                },
-                person: {
-                    handler(nv, ov) {
-                        console.log('监听对象');
-                    },
-                    deep: true,
-                    immediate: true
-                }
-            }
-        })
-```
-
-### wacth监听路由的变化
-
-- 其实就是在路由的`created`钩子函数里绑定组件的某个数据
-- 通过wacth监听路由的改变，改变的时候讲路由的参数赋值给被绑定的数据
-
-```js
- var home = {
-            template: '<h1>这是home,id是{{id}}</h1>',
-            data() {
-                return {
-                    id: 0
-                }
-            },
-            created() {
-                this.id = this.$route.params.id
-            },
-            watch: {
-                $route(nv, ov) {
-                    // 绑定路由的参数和自己本身的id数据
-                    this.id = this.$route.params.id
-                }
-            }
-        }
-```
-
-### 实际运用demo
-
-- 在vue实例中也可以直接wacth `$route`的变化
-- 那就可以通过this.$route.path来判断当前路由地址
-- 并配合判断是否为管理员，选择让不让他进入后台管理页面
-
-```js
-        var vm = new Vue({
-            router,
-            el: '#app',
-            data: {
-
-            },
-            methods: {},
-            watch: {
-                $route(nv, ov) {
-                  //有管理权限的
-                    var hasRoot = true;
-                    var path = this.$route.path;
-                    if (hasRoot && path.startsWith('/home')) {
-                        console.log('请进');
-                    } else {
-                        console.log('滚粗');
-                    }
-                }
-            }
-        })
-```
-
 
 ## 路由的嵌套
 

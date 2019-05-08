@@ -184,18 +184,68 @@
 4. 在`a`函数中`$emit ` 触发`b`中注册的事件，并将数据传如
 
 
-#### 总结
+## `.sync`
 
-- 兄弟传值的方法，在任何传值形式下都可以使用。因为通过一个空的vue实例操作，传送和获取都经过它。那么在父-》子，子-》父中也可以这么使用
-- 根本思想：谁要发数据，谁就绑事件。
+> 有时要对父子组件的 `prop` 进行双向绑定，但是用 `v-model` 可能会造成维护上的困难。
+>
+> 比如不知道这事件是从哪里改的值
+>
+> 非常适合用于 `modal` 类组件中
+
+```vue
+<A-Modal :show.sync='show'>
+```
+
+- 组件内部
+
+```js
+props: {
+    show: {
+        default: false,
+        type: Boolean,
+    }
+},
+// 修改 props 的值
+this.$emit('update:show',false)
+```
 
 
-#### vuex
 
-其实这就是vuex的思想，数据都放在同一个地方管理。
+## 组件中使用`v-model`
 
-不管是获取还是传入都在一个统一的容器里面。
+> 是`.sync` 的双向数据绑定版
 
+```js
+export default {
+    model: { // 修改 v-model 模式
+        prop: ' val',
+        event: 'update'
+    },
+    props: {
+        val: true, // 上层组件的值
+    },
+    methods: {
+        updateVal() { // 在要修改val的地方触发
+            this.$emit('update',val)
+        }
+    }
+}
+
+/* use 
+<Demo v-model="foo" />
+*/
+```
+
+
+## 总结
+
+父传子靠属性 `:prop`
+子传父靠回调 `this.$emit('event',playload)`
+兄弟传值的方法，在任何传值形式下都可以使用。
+因为通过一个空的vue实例操作，传送和获取都经过它。那么在父-》子，子-》父中也可以这么使用
+组件的`v-model` ,先修改双向绑定的 `mode` ，再通过 `$emit` 修改值。
+
+或者使用 [vuex](/vue/store.html)
 
 
 

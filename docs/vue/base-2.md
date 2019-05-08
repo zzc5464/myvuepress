@@ -44,9 +44,8 @@ $ npm run dev
 //就是可以解析html代码咯
 ```
 
-## 插值表达式闪烁问题
-
-#### v-cloak
+## v-cloak
+解决插值表达式闪烁问题
 
 - 浏览器会先解析原本的内容，当网络请求不好的时候插值表达式还没有被vue解析。
 - 甚至刷新快一点都会暴露
@@ -78,10 +77,10 @@ $ npm run dev
 >
 >  但是这个时候插值表达式已经被解析完毕了！
 
-##绑定属性
+## 绑定属性
 
-- v-bind:id
-
+> `v-bind:id`
+>
 > 所有属性都通过v-bind绑定
 >
 > 简写 ： `:+属性名` 
@@ -90,50 +89,51 @@ $ npm run dev
 >
 > 就把带有冒号的当做是动态绑定的属性
 
-```html
+```vue
 
 <div id="app">
-        <img v-bind:src="picUrl" alt="">
+    <img v-bind:src="picUrl" alt="">
 
-        <img :src="picUrl" alt="">
+    <img :src="picUrl" alt="">
 </div>
 
- <script>
-        //在给元素的属性进行数据绑定的时候，插值表达式不可以使用
-        //需要使用v-bind指令或者其简写形式 : 来进行绑定
-        var vm = new Vue({
-            el: "#app",
-            data: {
-                picUrl: "1.jpg"
-            }
-        })
+<script>
+    // 在给元素的属性进行数据绑定的时候，插值表达式不可以使用
+    // 需要使用v-bind指令或者其简写形式 : 来进行绑定
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            picUrl: "1.jpg"
+        }
+    })
 </script>
 ```
 
 - 给**元素的属性**绑定动态数据的时候一定要用`v-bind`
 
-1. 表达式
-
-{{id==1?"ok":"else"}}
+## 表达式
 
 > 基本的{{}}形式都可以写一些简单的表达式
 >
-> 不能写语句或者if，for
+```js
+{{id==1?"ok":"else"}}
+{{a+b}}
+```
 
-4. 效果指令
-> 控制显示隐藏
-   - v-if
-```html
+## 效果指令
+控制显示隐藏
+### v-if
+```vue
 <body>
     <div id="app">
-     <!--
-	直接写true或者false，不会去找data里面的值，会直接表示
-	true：显示，false：隐藏	
---> 
+    <!--
+        直接写true或者false，不会去找data里面的值，会直接表示
+        true：显示，false：隐藏	
+    --> 
         <p v-if='true'>我会出现</p>
         <p v-if='false'>我会隐藏</p>
-    <!--如果绑定的是某个变量，在model中值为true则显示，不写或者false为隐藏-->  
-        <p v-if='seen'>我是什么</p>
+        <!--如果绑定的是某个变量，在model中值为true则显示，不写或者false为隐藏-->  
+        <p v-else>我是什么</p>
     </div>
     <script src="./node_modules/vue/dist/vue.js"></script>
     <script>
@@ -148,10 +148,11 @@ $ npm run dev
 ```
 > v-if的元素，不是通过css来这是隐藏，而是直接不渲染。
 >
-> 如果某个元素v-if为false，那么这个元素身上的其他指令都会失效，因为根本不渲染
+> **如果某个元素v-if为false，那么这个元素身上的其他指令都会失效，因为根本不渲染**
 >
 > 切换为true时会重新渲染指令，所以消耗的性能很大，最好绑定在渲染频率低的元素上
-   - v-show
+
+### v-show
 
 > v-show的语法和v-if一样，不同的是，show只是隐藏了元素。
 >

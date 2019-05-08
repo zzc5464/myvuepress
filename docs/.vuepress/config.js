@@ -67,7 +67,9 @@ module.exports = {
       '/vue/': [
         'base',
         'base-2',
+        'ref',
         'v-model',
+        'keep-alive',
         'axios',
         'lifeCycle',
         'components',
@@ -75,13 +77,14 @@ module.exports = {
         'directive',
         'animate',
         'passVal', // 传值
-        'router',
         'SPA',
-        'store',
         'slot',
+        'watch',
         'config',
         'plugins',
         'else', // 其他
+        'router',
+        'store',
       ],
       '/react/': [
         'base',

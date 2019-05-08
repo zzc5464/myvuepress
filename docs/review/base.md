@@ -3,11 +3,13 @@
 
 ## Css3
 
-less和sass的区别
+1. less和sass的区别
 
-flex 常用属性
+2. flex 常用属性
 
-vw vh
+[flex](/css/flex.html)
+
+3. vw vh
 
 
 ## vue
@@ -17,28 +19,63 @@ vw vh
 
 2. 插件 Vue.use
 
+[答案](/vue/plugins.html)
 
-3. 组件的双向绑定 `.sync`
+3. 组件的双向绑定和 `.sync`
+
+[答案](/vue/passVal.html)
+
 4. 双向绑定原理
+
+[答案](/vue/v-model.html)
+
 5. 组件间通信
+
+[答案](/vue/passVal.html)
+
 6. 指令
+
+[答案](/vue/directive.html)
+
 7. `v-show` `v-if` 区别
+
+[答案](/vue/base-2.html#效果指令)
+
 8. `keep-alive`
+
+[答案](/vue/keep-alive.html)
+
 9. `watch`
+
+[答案](/vue/watch.html)
+
 10. 生命周期
 
+[答案](/vue/lifeCycle.html#生命周期)
+
+11. 过滤器
+
+[答案](/vue/filter.html#自定义全局过滤器)
 
 ### vue-router
 1. 跳转
-2. 传值
-  + query
-  + params
+
+```vue
+<router-link :to="/a?id=1">a</router-link>
+```
+以及 [编程式导航](/vue/router.html#编程式导航)
+
+2. 参数
+
+[答案](/vue/router.html#路由的参数)
+
 3. 导航守卫
 
 `router.beforeEach(to, from, next)`
+[答案](/vue/router.html#导航守卫)
 
-4. 路由配置
 ### vuex
+
 1. 原理
 2. 方法`state`  `mutations` `actions` `getters`
 3. `...Getters`
