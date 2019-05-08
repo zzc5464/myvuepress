@@ -13,9 +13,7 @@
   - [英文官网 - http://expressjs.com/](http://expressjs.com/)
   - [中文官网 - http://www.expressjs.com.cn/](http://www.expressjs.com.cn/)
 
-#### Express 特点  
-
-> 先了解,知道个概念,,后面会细讲
+## Express 特点  
 
 1. 实现了`路由`功能   (eg: express.Router())
 2. `中间件`（函数）功能;  (eg. App.use('/',function{ … }))、  配合 use 一块使用
@@ -23,16 +21,16 @@
 4. 可以集成其他`模板引擎` (eg: ejs )
 
 
-###★ Express 基本使用
+## 基本使用
 
-##### 1. 基本步骤
+### 1. 基本步骤
 
 - 安装:   `npm i express -S`        // 安装之前: 先`npm init -y` 初始化 package.json 文件
 - 加载:   `var express = require('express')`
 - 实例:   `var app = express()`      // 实例化 express 对象
 - 使用:   ` app.get()/app.use()/app.all() …. App.listen()`
 
-##### 2. 演示 Hello World 案例
+### 2. 演示 Hello World 案例
 
 ```js
 //1. 加载express
@@ -55,7 +53,7 @@ app.listen(8080,function () {
 
 ```
 
-##### 3.  res.send() 和 res.end() 的异同 ? 
+### 3.  res.send() 和 res.end() 的异同 ? 
 
 - 相同点: 都能够结束响应,把内容响应给浏览器
 
@@ -78,7 +76,7 @@ app.listen(8080,function () {
 
 
 
-**4.  res 的其他几个常用的方法**
+### 4.  res 的其他几个常用的方法
 
 -  **res.redirect([status,] path) : 重定向**
 
@@ -117,9 +115,9 @@ app.listen(8080,function () {
   ```
 
 
-###★ Express 中注册路由的方法
+## Express 中注册路由的方法
 
-#####方法一 :  app.METHOD
+方法一 :  app.METHOD
 
 > 这不是一个api，说的是get，post，put，delete都称为method方式
 >
@@ -145,7 +143,7 @@ app.listen(8080,function () {
 
   ​
 
-#####方法二 :   app.use()
+方法二 :   app.use()
 
 > 开头是: /index 就匹配
 >
@@ -160,7 +158,7 @@ app.use('/index',function (req,res) {
 })
 ```
 
-##### 方法三 : app.all()  
+方法三 : app.all()  
 
 > 任意类型, 路径完全匹配
 
@@ -174,7 +172,7 @@ app.use('/index',function (req,res) {
   ```
 
 
-###★ Express 处理静态资源
+## Express 处理静态资源
 
 1. app.use的写法:
 
@@ -192,21 +190,19 @@ app.use('/index',function (req,res) {
 
    ​
 
-2. #####使用 express 的内置模块   [express.static](http://www.expressjs.com.cn/starter/static-files.html)
+2. ### express 的内置模块   
 
-   > 作为一个长者推荐你使用`中间件`
-
-   ```js
-   //官网原话:
-   通过 Express 内置的 express.static 可以方便地托管静态文件，例如图片、CSS、JavaScript 文件等。
-
-   将`静态资源文件所在的目录`作为参数传递给 `express.static 中间件`,就可以提供静态资源文件的访问了。
-   ```
+[express.static](http://www.expressjs.com.cn/starter/static-files.html)
 
 
-> 比如：有如下两个路径
+通过 Express 内置的 express.static 可以方便地托管静态文件，例如图片、CSS、JavaScript 文件等。
 
->  href="./public/demo.css"     src="./public/dog.jpg"
+将**静态资源文件所在的目录**作为参数传递给 `express.static` 中间件,就可以提供静态资源文件的访问了。
+
+
+比如：有如下两个路径
+
+`href="./public/demo.css"     src="./public/dog.jpg"`
 
 ````js
 // 放静态文件的路径 path.join(__dirname,'./public');
@@ -218,7 +214,7 @@ app.use('/',express.static(path.join(__dirname,'./public')));
 ````
 - 找到静态资源加载的关键点只在于中间件中传的`地址参数`
 
-## Express的路由模块
+## 路由模块
 
 - 正常的配置是这样的:
 
@@ -271,7 +267,7 @@ app.use('/',express.static(path.join(__dirname,'./public')));
 
 - 注意配置好路由后在入口文件用app.use(router)调用
 
-### Express 的读取页面和传值问题?
+### 读取页面和传值问题
 
 - res.sendFile可以读取页面将内容响应回去，但是无法传值
 - 做动态网站是需要模版引擎的，模版引擎又要传`动态数据`
@@ -285,7 +281,7 @@ module.exports.index = function (req,res) {
 }
 ```
 
-## Express推荐使用的模版引擎(ejs)
+## 模版引擎(ejs)
 
 > 又来一个模版引擎，很坑爹
 >

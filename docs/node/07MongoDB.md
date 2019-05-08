@@ -1,10 +1,10 @@
-## MongoDB
+# MongoDB
 
-### MongoDB 介绍
+## MongoDB 介绍
 
 >  MongoDB是一个用json（bson）格式存储的数据库
 
-### 统一一下概念
+## 概念
 
 > 一个mangoDB有可以放多个数据库
 >
@@ -14,18 +14,18 @@
 >
 > 这里存储的json格式数据叫做bson（json的子集）
 
-### 为什么学习node选择 MongoDB?
+## 为什么node选择MongoDB
 
 - 学习成本较低
 - 和 Node.js 结合最好,  对 javascript 兼容较好
 
-### 官网链接:
+## 官网链接
 
-- [英文官网 -  https://www.mongodb.com/](https://www.mongodb.com/)
-- [中文官网 - https://www.mongodb.com/cn](https://www.mongodb.com/cn)
-- [菜鸟教程 - http://www.runoob.com/mongodb/mongodb-tutorial.html](http://www.runoob.com/mongodb/mongodb-tutorial.html)
+- [英文官网](https://www.mongodb.com/)
+- [中文官网](https://www.mongodb.com/cn)
+- [菜鸟教程](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 
-### 安装:
+## 安装:
 
 ##### ★ win 安装:   ( 推荐下载安装 )
 
