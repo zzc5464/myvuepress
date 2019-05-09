@@ -39,14 +39,14 @@ module.exports = {
           { text: 'Node', link: '/node/01base' },
           { text: 'PHP', link: '/php/base' },
           { text: '库类', link: '/libs/artTemplate' },
-          { text: '面试', link: '/review/base' },
+          // { text: '面试', link: '/review/base' },
         ]
       },
       {
         text: '国际化',
         // 这里是下拉列表展现形式。
         items: [
-          { text: '骗你的', link: '/review/base' },
+          // { text: '骗你的', link: '/review/base' },
           { text: '哪来的国际化', link: '/vue/' },
         ]
       },

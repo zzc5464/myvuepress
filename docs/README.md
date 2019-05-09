@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 快速开始 →
-actionLink: /review/base
+actionLink: /vue/base
 features:
 - title: 说人话
   details: 围绕一个主题，绝不衍伸过多的专业术语

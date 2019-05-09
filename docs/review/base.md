@@ -7,7 +7,7 @@
 
 2. flex 常用属性
 
-[flex](/css/flex.html)
+[答案](/css/flex.html)
 
 3. vw vh
 
@@ -82,13 +82,30 @@
 
 ## js
 1. `bind` `call` `apply`
-2. `new`
-2. 数组的方法
-3. 闭包
-4. 作用域
-5. `let` `var` `const` 区别
-6. 防抖,节流
 
+[答案](/js/this-fn.html)
+
+2. `new`
+
+[答案](/js/this-fn.html#实现-new)
+
+2. 数组的方法
+
+[答案](/js/array-fn.html#判断数组的方法)
+
+`forEach fliter every some map reduce find includes`
+
+3. 闭包 & 作用域
+
+[答案](/js/closure.html)
+
+4. `let` `var` `const` 区别
+
+
+
+5. 防抖,节流
+
+[答案](/js/writeCode.html#防抖)
 
 ## es6
 
