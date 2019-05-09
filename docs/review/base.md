@@ -123,7 +123,7 @@
 
 4. 解构赋值
 
-[答案](/js/ES6-02.html#async)
+[答案](/js/ES6-01.html#解构赋值)
 
 5. Proxy
 
@@ -135,11 +135,11 @@
 
 7. Object 拓展
 
-[答案](/js/ES6-02.html#async)
+[答案](/js/ES6-01.html#object)
 
 8. Array 拓展
 
-[答案](/js/ES6-02.html#async)
+[答案](/js/ES6-01.html#array对象)
 
 9. `let` `var` `const` 区别
 

@@ -1,9 +1,9 @@
 # ajax
-- 有两种方向
- + 自己调用自己服务器接口文件的时候，使用ajax。
- + 调用别人给你的功能接口的时候用jsonp
+
+前端的立身之本
 
 ## 跨域的方式
+
 ### 安装WampServer
 - 安装wampserver，和普通软件安装无差别，除指定安装路径外，其它默认。
 - 让电脑同时扮演客户端和服务器
@@ -284,3 +284,10 @@ function ajax(data){
 $(document).ajaxStart()
 ```
 
+
+
+## axios
+
+vue 项目最常用的 `ajax` 库 ，同时他也支持 `node` 端
+
+[详见](/vue/axios.html#axios)
