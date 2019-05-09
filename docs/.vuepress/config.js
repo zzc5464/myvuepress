@@ -30,9 +30,9 @@ module.exports = {
         items: [
           { text: 'H5', link: '/h5/h5api' },
           { text: 'CSS', link: '/css/base' },
-          { text: 'vue', link: '/vue/base' },
-          { text: 'react', link: '/react/base' },
-          { text: 'js基础', link: '/js/closure' },
+          { text: 'Vue', link: '/vue/base' },
+          { text: 'React', link: '/react/base' },
+          { text: 'Javascript', link: '/js/closure' },
           { text: '服务器相关', link: '/server/base' },
           { text: '前端构建', link: '/building/git2github' },
           { text: 'TypeScript', link: '/TS/base' },

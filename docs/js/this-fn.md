@@ -95,9 +95,9 @@ var obj2 = {
 console.log(obj1.our.bind(obj2));
 /*
 返回了一个函数
-			ƒ (){
-                console.log("zzc");
-            }
+  ƒ (){
+    console.log("zzc");
+  }
 */
 ```
 

@@ -63,6 +63,7 @@
 ```vue
 <router-link :to="/a?id=1">a</router-link>
 ```
+
 以及 [编程式导航](/vue/router.html#编程式导航)
 
 2. 参数
@@ -72,6 +73,7 @@
 3. 导航守卫
 
 `router.beforeEach(to, from, next)`
+
 [答案](/vue/router.html#导航守卫)
 
 ### vuex
@@ -99,24 +101,49 @@
 
 [答案](/js/closure.html)
 
-4. `let` `var` `const` 区别
-
-
-
-5. 防抖,节流
+4. 防抖,节流
 
 [答案](/js/writeCode.html#防抖)
 
 ## es6
 
 1. Promise
-2. async/await
-3. 结构赋值
-4. `*` 函数
+
+[答案](/js/ES6-02.html#promise)
+
+[手动实现 Promise](/js/writeCode.html#实现-promise)
+
+2. `*` 函数
+
+[答案](/js/ES6-02.html#generator)
+
+3. async/await
+
+[答案](/js/ES6-02.html#async)
+
+4. 解构赋值
+
+[答案](/js/ES6-02.html#async)
+
 5. Proxy
+
+[答案](/js/ES6-02.html#proxy)
+
 6. Set Map
+
+[答案](/js/ES6-01.html#set和map)
+
 7. Object 拓展
+
+[答案](/js/ES6-02.html#async)
+
 8. Array 拓展
+
+[答案](/js/ES6-02.html#async)
+
+9. `let` `var` `const` 区别
+
+[答案](/js/ES6-01.html#let与const)
 
 ## axios
 1. 请求响应拦截器
