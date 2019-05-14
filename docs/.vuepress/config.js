@@ -91,6 +91,7 @@ module.exports = {
         'router2',
         'redux',
         'react-redux',
+        'mobx',
       ],
       
       '/js/': [
