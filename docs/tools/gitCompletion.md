@@ -16,7 +16,7 @@
 
 安装过程中需要输入用户名密码
 
-<img :src="$withBase('/assets/tools/git-completion01.png')" alt="brew安装过程">
+<img :src="$withBase('/assets/tools/git-completion1.png')" alt="brew安装过程">
 
 - 测试安装成功
 
@@ -25,7 +25,7 @@ brew
 ```
 
 如图即安装成功
-<img :src="$withBase('/assets/tools/git-completion02.png')" alt="brew安装过程">
+<img :src="$withBase('/assets/tools/git-completion2.png')" alt="brew安装过程">
 
 ## 安装 bash-completion
 
