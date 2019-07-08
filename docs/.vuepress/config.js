@@ -40,6 +40,7 @@ module.exports = {
           { text: 'PHP', link: '/php/base' },
           { text: '库类', link: '/libs/artTemplate' },
           { text: '小程序云开发', link: '/miniProgram/cloud' },
+          { text: '前端工具', link: '/tools/gitCompletion' },
           // { text: '面试', link: '/review/base' },
         ]
       },
@@ -150,6 +151,9 @@ module.exports = {
       ],
       '/miniProgram/': [
         'cloud'
+      ],
+      '/tools/': [
+        'gitCompletion'
       ],
     }, // 侧边栏
   }
