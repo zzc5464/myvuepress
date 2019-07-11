@@ -153,7 +153,8 @@ module.exports = {
         'cloud'
       ],
       '/tools/': [
-        'gitCompletion'
+        'gitCompletion',
+        'git',
       ],
     }, // 侧边栏
   }
