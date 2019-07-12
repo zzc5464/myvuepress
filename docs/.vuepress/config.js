@@ -154,6 +154,7 @@ module.exports = {
       ],
       '/tools/': [
         'gitCompletion',
+        'chrome',
         'git',
       ],
     }, // 侧边栏
