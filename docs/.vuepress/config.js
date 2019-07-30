@@ -156,6 +156,7 @@ module.exports = {
         'gitCompletion',
         'chrome',
         'git',
+        'git-tag',
       ],
     }, // 侧边栏
   }
